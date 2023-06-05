@@ -1,5 +1,2 @@
-#!/usr/bin/python3
-import os
-software_name = os.getenv('PYFILE')
-code = open(software_name).read()
-compile(code, software_name, 'exec')
+#!/bin/bash
+python3 -m compileall -b $PYFILE
