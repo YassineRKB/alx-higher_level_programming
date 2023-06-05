@@ -1,0 +1,3 @@
+#!/usr/bin/python3
+software = open('$PYFILE').read()
+compile(software, '$PYFILE', 'exec')
