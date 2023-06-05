@@ -1,3 +1,5 @@
 #!/usr/bin/python3
-software = open('$PYFILE').read()
-compile(software, '$PYFILE', 'exec')
+import os
+software_name = os.getenv('PYFILE')
+code = open(software_name).read()
+compile(code, software_name, 'exec')
