@@ -8,9 +8,9 @@ int check_cycle(listint_t *list)
 {
 	listint_t *slow = list, *fast = list;
 
-	if(!list)
+	if (!list)
 		return (0);
-	
+
 	while (fast)
 	{
 		fast = fast->next->next;
