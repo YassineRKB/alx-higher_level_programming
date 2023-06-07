@@ -7,4 +7,4 @@ def remove_char_at(str, n):
         if i != n:
             strf += str[i]
         i += 1
-    print("{}".format(strf))
+    return strf
