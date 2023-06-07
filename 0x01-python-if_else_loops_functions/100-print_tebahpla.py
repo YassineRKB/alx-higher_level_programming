@@ -5,5 +5,5 @@ for i in range(122, 96, -1):
         r = i - 32
     else:
         r = i
-    print("{}".format(chr(r)),end="")
+    print("{}".format(chr(r)), end="")
     flag = -1 * flag
