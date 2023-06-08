@@ -17,8 +17,8 @@ if __name__ == "__main__":
     else:
         print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
-    a = argv[1]
+    a = int(argv[1])
     operator = argv[2]
-    b = argv[3]
+    b = int(argv[3])
     r = op(a, b)
     print("{} {} {} = {}".format(a, operator, b, r))
