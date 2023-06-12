@@ -6,33 +6,37 @@
 */
 int is_palindrome(listint_t **head)
 {
-	listint_t *llist = *head, *tlist = *head, *p = NULL, *t = NULL;
+	listint_t *lenlist = *head, *list = *head;
+	int *data, len = 0, i = 0;
 
 	if (!head)
 		return (0);
-	if (!llist)
+	if (!list)
 		return (1);
-	
-	for (; llist && llist->next;)
+	len = calclen(lenlist);
+	if (i == 1)
+		return (1);
+	data = malloc(sizeof(int) * len);
+	if (!data)
+		return (0);
+	for (; list; i++, list = list->next)
+		data[i] = list->n;
+	for (i = 0; i <= (len / 2); i++)
 	{
-		llist = llist->next->next;
-		t = tlist;
-		tlist = tlist->next;
-		t->next = p;
-		p = t->next;
-	}
-	
-	if (llist)
-		tlist = tlist->next;
-
-	for (; tlist && p; )
-	{
-		if (tlist->n != p->n)
+		if (data[i] != data[len - i - 1])
 		{
+			free(data);
 			return (0);
 		}
-		tlist = tlist->next;
-		llist = llist->next;
 	}
+	free(data);
 	return (1);
+}
+int calclen(listint_t *list)
+{
+	int len;
+
+	for (len = 0; list; len++)
+		list = list->next;
+	return len;
 }
