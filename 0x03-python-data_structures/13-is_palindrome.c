@@ -17,10 +17,8 @@ int is_palindrome(listint_t **head)
 	for (; list; i++, list = list->next)
 		data[i] = list->n;
 	for (i = 0; i <= (len / 2); i++)
-	{
 		if (data[i] != data[len - i - 1])
 			return (0);
-	}
 	return (1);
 }
 int calclen(listint_t *list)
