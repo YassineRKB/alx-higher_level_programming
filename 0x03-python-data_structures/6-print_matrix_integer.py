@@ -9,3 +9,5 @@ def print_matrix_integer(matrix=[[]]):
             else:
                 print("{:d}".format(integ))
             nint += 1
+    if matrix == [[]]:
+        print("{}".format())
