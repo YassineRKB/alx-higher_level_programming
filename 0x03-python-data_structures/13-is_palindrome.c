@@ -14,8 +14,6 @@ int is_palindrome(listint_t **head)
 	if (!list)
 		return (1);
 	len = calclen(lenlist);
-	if (i == 1)
-		return (1);
 	for (; list; i++, list = list->next)
 		data[i] = list->n;
 	for (i = 0; i <= (len / 2); i++)
