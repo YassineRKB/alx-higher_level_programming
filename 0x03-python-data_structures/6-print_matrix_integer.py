@@ -10,4 +10,4 @@ def print_matrix_integer(matrix=[[]]):
                 print("{:d}".format(integ))
             nint += 1
     if matrix == [[]]:
-        print("{}".format())
+        print()
