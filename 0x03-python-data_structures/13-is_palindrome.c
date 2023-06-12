@@ -13,23 +13,26 @@ int is_palindrome(listint_t **head)
 	if (!llist)
 		return (1);
 	
-	for (; llist && llist->next;p = t->next)
+	for (; llist && llist->next;)
 	{
 		llist = llist->next->next;
 		t = tlist;
 		tlist = tlist->next;
 		t->next = p;
+		p = t->next;
 	}
 	
 	if (llist)
 		tlist = tlist->next;
 
-	for (; tlist && p; tlist = tlist->next, llist = llist->next)
+	for (; tlist && p; )
 	{
 		if (tlist->n != p->n)
 		{
 			return (0);
 		}
+		tlist = tlist->next;
+		llist = llist->next;
 	}
 	return (1);
 }
