@@ -5,12 +5,11 @@ def roman_to_int(roman_string):
     num = 0
     if roman_string is None or type(roman_string) is not str:
         return None
-    roman_string = roman_string.upper()
     for numeral in roman_string[::-1]:
-        if numeral not in numerals:
+        if numeral.upper() not in numerals:
             return None
-        num = numerals[numeral]
-        if numerals[numeral] <= num:
+        num = numerals[numeral.upper()]
+        if numerals[numeral.upper()] <= num:
             inte += num
         else:
             inte -= num
