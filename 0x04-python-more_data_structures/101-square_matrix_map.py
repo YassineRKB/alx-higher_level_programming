@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 def square_matrix_map(matrix=[]):
     matrixlen = len(matrix)
-    neo = []
+    antat = []
     for i in range(matrixlen):
-        neo.append(list(map(lambda x: x ** 2, matrix[i])))
-    return neo
+        antat.append(list(map(lambda x: x ** 2, matrix[i])))
+    return antat
