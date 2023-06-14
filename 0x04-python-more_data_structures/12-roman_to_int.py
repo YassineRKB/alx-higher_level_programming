@@ -8,10 +8,10 @@ def roman_to_int(roman_string):
     for numeral in roman_string[::-1]:
         if numeral.upper() not in numerals:
             return None
-        num = numerals[numeral.upper()]
-        if numerals[numeral.upper()] <= num:
-            inte += num
+        numeral = numerals[numeral.upper()]
+        if numerals[numeral] >= num:
+            inte += numeral
         else:
-            inte -= num
+            inte -= numeral
         num = numeral
     return inte
