@@ -9,9 +9,9 @@ def roman_to_int(roman_string):
         if numeral.upper() not in rnums:
             return None
         numeral = rnums[numeral.upper()]
-        if numeral < previusNumeral:
-            inte -= numeral
-        else:
+        if numeral >= previusNumeral:
             inte += numeral
+        else:
+            inte -= numeral
         previusNumeral = numeral
     return inte
