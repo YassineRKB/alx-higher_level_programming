@@ -9,6 +9,6 @@ def best_score(a_dictionary):
             bint = a_dictionary[key]
             lastkey = key
         if bint < a_dictionary[key]:
-            bint = a_dictionary[key]
             lastkey = key
+            bint = a_dictionary[key]
     return lastkey
