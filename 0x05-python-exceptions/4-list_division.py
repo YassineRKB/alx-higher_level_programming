@@ -13,5 +13,4 @@ def list_division(my_list_1, my_list_2, list_length):
             print("division by 0")
         finally:
             res_list.append(res)
-    print(res_list)
     return res_list
