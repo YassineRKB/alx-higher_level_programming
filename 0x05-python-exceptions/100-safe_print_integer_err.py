@@ -7,5 +7,4 @@ def safe_print_integer_err(value):
     except Exception as e:
         sys.stderr.write("Exception: " + str(e) + '\n')
         verdict = False
-        sys.stderr.flush()
     return verdict
