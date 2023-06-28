@@ -14,7 +14,8 @@ class Square:
         elif size < 0:
             raise ValueError("size must be >= 0")
         self._Square__size = size
-        if posType is not tuple or posElements !=2 or position[0] < 0 or position[1] < 0:
+        if posType is not tuple or posElements != 2 \
+                or position[0] < 0 or position[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = position
 
@@ -58,6 +59,7 @@ class Square:
     def position(self, value):
         posType = type(value)
         posElements = len(2)
-        if posType is not tuple or posElements !=2 or value[0] < 0 or value[1] < 0:
+        if posType is not tuple or posElements != 2 \
+                or value[0] < 0 or value[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
