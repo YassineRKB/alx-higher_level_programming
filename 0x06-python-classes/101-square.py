@@ -73,11 +73,13 @@ class Square:
         lines = self.__position
         if leg == 0:
             return string
-        for i in range(leg):
+        for a in range(lines[1]):
+            string += '\n'
+        for b in range(leg):
             for j in range(lines[0]):
                 string += " "
             for k in range(leg):
                 string += "#"
-            if i != leg - 1:
+            if b != leg - 1:
                 string += '\n'
         return string
