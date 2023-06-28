@@ -71,6 +71,8 @@ class Square:
         string = ""
         leg = self._Square__size
         lines = self.__position
+        if leg == 0:
+            return string
         if leg != 0:
             string = '\n' * lines[1]
         for i in range(leg):
