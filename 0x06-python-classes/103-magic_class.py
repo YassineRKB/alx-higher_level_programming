@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ class file for MagicClass"""
-import math
+from math import pi
 
 
 class MagicClass:
@@ -12,7 +12,8 @@ class MagicClass:
         self._rad = rad
 
     def area(self):
-        pass
+        areaR = pi * (self._rad ** 2)
+        return areaR
 
     def circumference(self):
         pass
