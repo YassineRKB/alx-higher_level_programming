@@ -16,4 +16,5 @@ class MagicClass:
         return areaR
 
     def circumference(self):
-        pass
+        circum = pi * self._rad * 2
+        return circum
