@@ -53,4 +53,3 @@ class Square:
     def __gt__(self, other):
         ope = self.area() > other.area()
         return ope
-    
