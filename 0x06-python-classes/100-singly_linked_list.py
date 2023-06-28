@@ -35,7 +35,6 @@ class Node:
 """ file part for singlylinkedlist class"""
 
 
-
 class SinglyLinkedList:
     """Singly linked list class"""
 
@@ -61,5 +60,5 @@ class SinglyLinkedList:
             list += str(existingNode.data)
             if existingNode.next_node is not None:
                 list += '\n'
-            existingNode = existingNode.next_node    
+            existingNode = existingNode.next_node
         return list
