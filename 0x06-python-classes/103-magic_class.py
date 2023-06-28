@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ class file for MagicClass"""
-import math
+from math import pi
 
 
 class MagicClass:
@@ -10,10 +10,12 @@ class MagicClass:
         self.__rad = 0
         if radType is not int and radType is not float:
             raise TypeError("radius must be an number")
-        self.__rad = rad
+        self._rad = rad
 
     def area(self):
-        return math.pi * self.__rad ** 2
+        areaR = pi * (self.__rad ** 2)
+        return areaR
 
     def circumference(self):
-        return math.pi * 2 * self.__rad
+        circum = (pi * 2) * self.__rad
+        return circum
