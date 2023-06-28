@@ -10,7 +10,7 @@ class MagicClass:
         self.__rad = 0
         if radType is not int and radType is not float:
             raise TypeError("radius must be an number")
-        self._rad = rad
+        self.__rad = rad
 
     def area(self):
         areaR = pi * (self.__rad ** 2)
