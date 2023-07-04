@@ -33,7 +33,6 @@ ValueError: size must be >= 0
 Traceback (most recent call last):
 ...
 TypeError: size must be an integer
-
 >>> print_square("69")
 Traceback (most recent call last):
 ...
