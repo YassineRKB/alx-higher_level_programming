@@ -1,5 +1,7 @@
 #!/usr/bin/python3
+"""matrix mul func define"""
 def matrix_mul(m_a, m_b):
+    """mul 2 maatrices"""
     mult = []
     TypeMaList = isinstance(m_a, list)
     TypeMbList = isinstance(m_b, list)
