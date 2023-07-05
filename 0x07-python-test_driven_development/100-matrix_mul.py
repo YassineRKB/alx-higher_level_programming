@@ -5,9 +5,10 @@ def matrix_mul(m_a, m_b):
     mult = []
     TypeMaList = isinstance(m_a, list)
     TypeMbList = isinstance(m_b, list)
-    if not TypeMaList or not TypeMbList:
-        raise TypeError("m_a must be a list" if not TypeMaList \
-                        else "m_b must be a list")
+    if not TypeMaList:
+        raise TypeError("m_a must be a list")
+    if not TypeMbList:
+        raise TypeError("m_b must be a list")
     for li in m_a:
         if not isinstance(li, list):
             raise TypeError("m_a must be a list of lists")
