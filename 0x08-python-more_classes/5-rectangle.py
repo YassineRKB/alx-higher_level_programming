@@ -24,7 +24,7 @@ class Rectangle:
         return msg
 
     def __del__(slef):
-        print("Bye Rectangle...")
+        print("Bye rectangle...")
 
     @property
     def width(self):
