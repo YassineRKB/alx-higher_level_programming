@@ -21,5 +21,5 @@ void print_python_string(PyObject *p)
 	else
 		printf("  type: compact unicode object\n");
 	printf("  length: %ld\n", length);
-	printf("  value: %S\n", PyUnicode_AsWideCharString(p, &length));
+	printf("  value: %S\n", PyUnicode_AsWideCharString(p, NULL));
 }
