@@ -43,10 +43,10 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer([10, -10, 10]), 10)
 
     def test_strings_lists(self):
-        self.assertEqual(max_integer(['q', 'w', 'e', 'r', 't', 'y']), 'a')
+        self.assertEqual(max_integer(['q', 'w', 'e', 'r', 't', 'y']), 'y')
         self.assertEqual(max_integer("abcxyz"), 'z')
-        self.assertEqual(max_integer(["sdfaf", 'q']), 'w')
-        self.assertEqual(max_integer("6q9jdq"), '2')
+        self.assertEqual(max_integer(["sdfaf", 'w']), 'w')
+        self.assertEqual(max_integer("abcxyz"), 'z')
 
     if __name__ == "__main__":
         unittest.main()
