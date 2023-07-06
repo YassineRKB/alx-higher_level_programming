@@ -10,16 +10,17 @@ def check(i, j, Board):
             return False
     return True
 
+
 def backTrack(n, position, qboard, sboard):
     if position == n:
         sboard.append(qboard.copy())
         return
-
     for column in range(n):
         if check(position, column, qboard):
             qboard.append([position, column])
             backTrack(n, position + 1, qboard, sboard)
             qboard.pop()
+
 
 if __name__ == "__main__":
     arglen = len(argv)
