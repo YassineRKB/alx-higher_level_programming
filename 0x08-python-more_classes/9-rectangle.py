@@ -68,6 +68,7 @@ class Rectangle:
 
     @staticmethod
     def bigger_or_equal(rect1, rect2):
+        """a static method"""
         TypeRect1 = isinstance(rect1, Rectangle)
         TypeRect2 = isinstance(rect2, Rectangle)
         if not TypeRect1:
@@ -83,4 +84,5 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
+        """a square class method"""
         return cls(size, size)
