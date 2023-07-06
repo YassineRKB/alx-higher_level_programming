@@ -8,11 +8,13 @@ class Rectangle:
     print_symbol = "#"
 
     def __init__(self, width=0, height=0):
+        """init constructor"""
         self.height = height
         self.width = width
         type(self).number_of_instances += 1
 
     def __str__(self):
+        """class string"""
         msg = ""
         if self.width == 0 or self.height == 0:
             return msg
@@ -24,23 +26,28 @@ class Rectangle:
             return msg
 
     def __repr__(self):
+        """string represetating the class"""
         msg = "Rectangle({}, {})".format(self.width, self.height)
         return msg
 
     def __del__(slef):
+        """on instance delete"""
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
 
     @property
     def width(self):
+        """width property"""
         return self.__width
 
     @property
     def height(self):
+        """height property"""
         return self.__height
 
     @width.setter
     def width(self, value):
+        """width setter"""
         TypeWid = isinstance(value, int)
         if not TypeWid:
             raise TypeError("width must be an integer")
@@ -50,6 +57,7 @@ class Rectangle:
 
     @height.setter
     def height(self, value):
+        """height setter"""
         TypeHei = isinstance(value, int)
         if not TypeHei:
             raise TypeError("height must be an integer")
@@ -58,9 +66,11 @@ class Rectangle:
         self.__height = value
 
     def area(self):
+        """area func"""
         return self.height * self.width
 
     def perimeter(self):
+        """preimeter func"""
         if self.width == 0 or self.height == 0:
             return 0
         else:
