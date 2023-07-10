@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""Module for calss Mylist"""
+"""MyList module"""
 
 
 class MyList(list):
-    """Class Mylist that iherits from list"""
+    """Module for calss Mylist"""
 
     def print_sorted(self):
         """func to print sorted list"""
