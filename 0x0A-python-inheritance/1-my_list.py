@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-"""MyList module"""
+"""Module 1-my_list, class MyList that inherits list"""
 
 
 class MyList(list):
-    """Module for calss Mylist"""
+    """calss Mylist inherits List"""
 
     def print_sorted(self):
-        """func to print sorted list"""
+        """func to print sorted list in ascending order"""
         print(sorted(self))
