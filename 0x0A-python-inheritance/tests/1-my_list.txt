@@ -13,10 +13,10 @@ True
 <class '1-my_list.MyList'>
 >>> print(TheList)
 []
->>> TheList = MyList()
->>> TheList.print_sorted()
+>>> my_list = MyList()
+>>> my_list.print_sorted()
 []
->>> TheList = MyList(None)
+>>> my_list = MyList(None)
 Traceback (most recent call last):
 ...
 TypeError: 'NoneType' object is not iterable
