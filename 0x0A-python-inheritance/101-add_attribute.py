@@ -4,7 +4,7 @@
 
 def add_attribute(obj, att, value):
     """func to add attribute when possible"""
-    typeAtt = hasattr(obj, "__doc__")
+    typeAtt = hasattr(obj, "__dict__")
     attmsg = "can't add new attribute"
     if not typeAtt:
         raise TypeError(attmsg)
