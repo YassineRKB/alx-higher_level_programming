@@ -46,5 +46,5 @@ TypeError: BaseGeometry.integer_validator() missing 1 required positional argume
 >>> BaseGeometry.integer_validator("tufo", -6.9)
 Traceback (most recent call last):
 ...
-TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+TypeError: name must be an integer
 
