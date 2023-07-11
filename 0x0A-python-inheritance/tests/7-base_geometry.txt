@@ -1,5 +1,16 @@
+>>> doc = __import__("7-base_geometry").__doc__
+>>> len(doc) > 0
+True
+>>> doc = __import__("7-base_geometry").BaseGeometry.__doc__
+>>> len(doc) > 0
+True
+>>> doc = __import__("7-base_geometry").BaseGeometry.area.__doc__
+>>> len(doc) > 0
+True
+>>> doc = __import__("7-base_geometry").BaseGeometry.integer_validator.__doc__
+>>> len(doc) > 0
+True
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
-
 >>> bg = BaseGeometry()
 >>> bg.area()
 Traceback (most recent call last):
