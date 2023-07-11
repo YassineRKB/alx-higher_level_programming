@@ -1,50 +1,74 @@
->>> doc = __import__("7-base_geometry").__doc__
->>> len(doc) > 0
-True
->>> doc = __import__("7-base_geometry").BaseGeometry.__doc__
->>> len(doc) > 0
-True
->>> doc = __import__("7-base_geometry").BaseGeometry.integer_validator.__doc__
->>> len(doc) > 0
-True
->>> doc = __import__("7-base_geometry").BaseGeometry.area.__doc__
->>> len(doc) > 0
-True
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
->>> BaseGeometry.integer_validator("tufo", 6.9)
+
+>>> bg = BaseGeometry()
+>>> bg.area()
 Traceback (most recent call last):
 ...
-TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
->>> BaseGeometry.integer_validator("my_int", 6)
->>> BaseGeometry.integer_validator("tufo")
+Exception: area() is not implemented
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("checkme", 0)
+Traceback (most recent call last):
+...
+ValueError: checkme must be greater than 0
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("checkme", -999)
+Traceback (most recent call last):
+...
+ValueError: checkme must be greater than 0
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("tufo_pro_max", 69)
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("tufo", None)
+Traceback (most recent call last):
+...
+TypeError: tufo must be an integer
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("tufo", "hello!")
+Traceback (most recent call last):
+...
+TypeError: tufo must be an integer
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("tufo", "50")
+Traceback (most recent call last):
+...
+TypeError: tufo must be an integer
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("tufo", {"flaged": 2})
+Traceback (most recent call last):
+...
+TypeError: tufo must be an integer
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("tufo", {"flaged": 2, "Served": 0})
+Traceback (most recent call last):
+...
+TypeError: tufo must be an integer
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("tufo", [1, 2, 3])
+Traceback (most recent call last):
+...
+TypeError: tufo must be an integer
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("tufo", (1, 2, 3))
+Traceback (most recent call last):
+...
+TypeError: tufo must be an integer
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("tufo", {6, 9})
+Traceback (most recent call last):
+...
+TypeError: tufo must be an integer
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("tufo", True)
+Traceback (most recent call last):
+...
+TypeError: tufo must be an integer
+>>> bg = BaseGeometry()
+>>> bg.integer_validator()
 Traceback (most recent call last):
 ...
 TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
->>> BaseGeometry.integer_validator("tufo", "YOLO")
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("age_of_ice")
 Traceback (most recent call last):
 ...
 TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
->>> BaseGeometry.integer_validator("tufo", "69")
-Traceback (most recent call last):
-...
-TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
->>> BaseGeometry.integer_validator("tufo", -69)
-Traceback (most recent call last):
-...
-TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
-
->>> BaseGeometry.integer_validator("tufo", [69])
-Traceback (most recent call last):
-...
-TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
-
->>> BaseGeometry.integer_validator("tufo", [6, 9])
-Traceback (most recent call last):
-...
-TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
-
->>> BaseGeometry.integer_validator("tufo", -6.9)
-Traceback (most recent call last):
-...
-TypeError: name must be an integer
-
