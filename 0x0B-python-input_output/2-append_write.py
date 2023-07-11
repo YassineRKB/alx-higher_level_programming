@@ -3,6 +3,6 @@
 
 
 def append_write(filename="", text=""):
-    """func to write text file"""
+    """func to append text file"""
     with open(filename, "a") as r:
         return r.write(text)
