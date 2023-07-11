@@ -1,16 +1,13 @@
 #!/usr/bin/python3
 """module for calss BaseGeometry"""
 
+BG = __import__('7-base_geometry').BaseGeometry
 
-class BaseGeometry:
+
+class Rectangle(BG):
     """empty base class BaseGeometry"""
-    def area(self):
-        raise Exception("area() is not implemented")
-
-    def integer_validator(self, name, value):
-        msgType = "{} must be an integer".format(name)
-        msgValue = "{} must be greater than 0".format(name)
-        if type(value) is not int:
-            raise TypeError(msgType)
-        if value <= 0:
-            raise ValueError(msgValue)
+    def __init__(self, width, height):
+        self.integer_validator("width", width)
+        self.integer_validator("height", height)
+        self.__width = width
+        self.__height = height
