@@ -13,7 +13,8 @@ class Rectangle(BG):
         self.__height = height
 
     def __str__(self):
-        msg = "[{:s}] {:d}/{:d}".format(type(self).__name__, self.__width, self.__height)
+        msg = "[{:s}] {:d}/{:d}".format(
+            type(self).__name__, self.__width, self.__height)
         return msg
 
     def area(self):
