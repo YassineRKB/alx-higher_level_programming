@@ -4,5 +4,5 @@ import json
 
 
 def to_json_string(obj):
-    """func to append text file"""
+    """func to make json of obj"""
     return json.dumps(obj)
