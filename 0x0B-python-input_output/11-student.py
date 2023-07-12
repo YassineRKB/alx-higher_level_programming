@@ -12,8 +12,7 @@ class Student:
 
     def to_json(self, attr=None):
         dicct = {}
-        typeAttr = isinstance(attr, list)
-        if typeAttr:
+        if type(attr) is list:
             for attribute in attr:
                 if type(attribute) is not str:
                     break
@@ -21,3 +20,8 @@ class Student:
                     dicct[attribute] = getattr(self, attribute)
             return dicct
         return self.__dict__
+
+    def reload_from_json(self, json):
+        for attribute in json:
+            value = json[attribute]
+            setattr(self, attribute, value)
