@@ -12,8 +12,7 @@ class Student:
 
     def to_json(self, attr=None):
         dicct = {}
-        typeAttr = isinstance(attr, list)
-        if typeAttr:
+        if type(attr) is list:
             for attribute in attr:
                 if type(attribute) is not str:
                     break
