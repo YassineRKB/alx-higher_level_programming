@@ -88,11 +88,19 @@ class Base:
     def load_from_file_csv(cls):
         """method: load_from_file_csv"""
         filename = cls.__name__ + ".csv"
+        flag = 1
+        dicc = {}
+        obj = []
         if not path.exists(filename):
-            return []
+            return obj
         with open(filename, "r") as r:
-            lines = r.read()
-        res = []
-        for line in cls.from_json_string(lines):
-            res.append(cls.create(**line))
-        return res
+            toread = csv.reader(r)
+            keys = next(toread, None)
+            for line in toread:
+                if flag != 0:
+                    for key, value in enumerate(line):
+                        dicc[keys[key]] = int(value)
+                    instance = cls.create(**dicc)
+                    obj.append(instance)
+        return obj
+
