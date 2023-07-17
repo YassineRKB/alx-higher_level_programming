@@ -92,8 +92,9 @@ class Rectangle(Base):
 
     def __str__(self):
         """method: str"""
-        resstr = f"[{type(self).__name__}] ({self.id}) {self.x}/{self.y} \
-            - {self.width}/{self.height}"
+        resstrP1 = f"[{type(self).__name__}] ({self.id}) {self.x}/{self.y} - "
+        resstrP2 = f"{self.width}/{self.height}"
+        resstr = resstrP1 + resstrP2
         return resstr
 
     def update(self, *args, **kwargs):
