@@ -92,8 +92,12 @@ class Rectangle(Base):
 
     def __str__(self):
         """method: str"""
-        resstrP1 = f"[{type(self).__name__}] ({self.id}) {self.x}/{self.y} - "
-        resstrP2 = f"{self.width}/{self.height}"
+        objType = type(self).__name__
+        resstrP1 = f"[{objType}] ({self.id}) {self.x}/{self.y} - "
+        if objType == "Rectangle":
+            resstrP2 = f"{self.width}/{self.height}"
+        else:
+            resstrP2 = f"{self.width}"
         resstr = resstrP1 + resstrP2
         return resstr
 
