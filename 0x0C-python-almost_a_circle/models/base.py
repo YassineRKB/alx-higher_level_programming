@@ -75,15 +75,14 @@ class Base:
     def save_to_file_csv(cls, list_objs):
         """method: save_to_file_csv"""
         filename = cls.__name__ + ".csv"
-        if filename == "Rectangle.csv":
-            dicc = ("id", "width", "height", "x", "y")
-        else:
-            dicc = ("id", "size", "x", "y")
         with open(filename, "w") as w:
-            towrite = csv.DictWriter(w, fieldnames=dicc)
-            towrite.writeheader()
-            if list_objs is not None:
-                towrite.writerow(obj.to_dictionary() for obj in list_objs)
+            towrite = csv.writer(w)
+            for obj in list_objs:
+                if filename == "Rectangle.csv":
+                    dicc = [obj.id, obj.width, obj.height, obj.x, obj.y]
+                else:
+                    dicc = [obj.id, obj.size, obj.x, obj.y]
+                towrite.writerow(dicc)
 
     @classmethod
     def load_from_file_csv(cls):
