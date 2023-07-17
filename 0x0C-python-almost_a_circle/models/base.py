@@ -88,16 +88,16 @@ class Base:
     def load_from_file_csv(cls):
         """method: load_from_file_csv"""
         filename = cls.__name__ + ".csv"
-        dicc = {}
-        obj = []
-        if not path.exists(filename):
-            return obj
         with open(filename, "r") as r:
             toread = csv.reader(r)
-            keys = next(toread, None)
-            for line in toread:
-                dicc = {keys[key]: int(value) for key, value in enumerate(line)}
-                instance = cls.create(**dicc)
-                obj.append(instance)
-        return obj
+            res = []
+            list = {}
+            rect = ["id", "width", "height", "x", "y"]
+            squa = ["id", "size", "x", "y"]
+            fieldnames = rect if filename == "Rectangle.csv" else squa
+            for row in toread:
+                instance = cls.create(**{key: int(value) for key, value in zip(fieldnames, row)})
+                res.append(instance)
+            return res
+        
 
