@@ -96,8 +96,8 @@ class Base:
             squa = ["id", "size", "x", "y"]
             fieldnames = rect if filename == "Rectangle.csv" else squa
             for row in toread:
-                instance = cls.create(**{key: int(value) for key, value in zip(fieldnames, row)})
+                instance = cls.create(
+                    **{key: int(value) for key, value in zip(fieldnames, row)}
+                    )
                 res.append(instance)
             return res
-        
-
