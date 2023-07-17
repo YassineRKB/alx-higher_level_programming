@@ -26,6 +26,15 @@ class Base:
             res = dumpjs(list_dictionaries)
         return res
 
+    @staticmethod
+    def from_json_string(json_string):
+        """method: dictonaries to json"""
+        if json_string is None:
+            return []
+        else:
+            res = loadjs(json_string)
+        return res
+
     @classmethod
     def save_to_file(cls, list_objs):
         """method: save_to_file"""
