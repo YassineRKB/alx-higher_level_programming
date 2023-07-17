@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 """Model for base class"""
+from os import path
+from json import dumps as dumpjs
+from json import loads as loadjs
 
 
 class Base:
@@ -13,3 +16,13 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    def to_json_string(list_dictionaries):
+        """method: dictonaries to json"""
+        if list_dictionaries is None or \
+            type(list_dictionaries) != list \
+                or len(list_dictionaries) == 0:
+            res = "[]"
+        else:
+            res = dumpjs(list_dictionaries)
+        return res
