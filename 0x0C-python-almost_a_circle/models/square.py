@@ -14,14 +14,14 @@ class Square(Rectangle):
     @property
     def size(self):
         """getter: size"""
-        return self.width
+        return self.__width
 
     @size.setter
     def size(self, value):
         """setter: size"""
         super().valueChecker("width", value)
-        self.width = value
-        self.height = value
+        self.__width = value
+        self.__height = value
 
     def update(self, *args, **kwargs):
         """method: update"""
