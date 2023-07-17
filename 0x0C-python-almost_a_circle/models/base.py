@@ -4,7 +4,7 @@ from os import path
 from json import dumps as dumpjs
 from json import loads as loadjs
 import csv
-
+import turtle
 
 class Base:
     """Base Class"""
@@ -101,3 +101,57 @@ class Base:
                     )
                 res.append(instance)
             return res
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """method: draw"""
+        t = turtle.Turtle()
+        t.screen.bgcolor('#000000')
+        t.shape('turtle')
+        colors = ["blue", "orange", "green", "red", "white"]
+        ran = 0
+        t.color(colors[ran])
+        t.penup()
+        t.goto(-200, 200)
+        for rectangle in list_rectangles:
+            if ran == 4:
+                ran = 0
+            else:
+                ran += 1
+            t.color(colors[ran])
+            t.goto(t.xcor() + (rectangle.width + 40), t.ycor() - (rectangle.height + 80))
+            t.up()
+            t.down()
+            for i in range(2):
+                if ran == 4:
+                    ran = 0
+                else:
+                    ran += 1
+                t.color(colors[ran])
+                t.forward(rectangle.width)
+                t.left(90)
+                t.forward(rectangle.height)
+                t.left(90)
+            t.penup()
+        t.goto(-200, -50)
+        for square in list_squares:
+            if ran == 4:
+                ran = 0
+            else:
+                ran += 1
+            t.color(colors[ran])
+            t.goto(t.xcor() + (square.width + 10), t.ycor() - (square.height + 40))
+            t.up()
+            t.down()
+            for i in range(2):
+                if ran == 4:
+                    ran = 0
+                else:
+                    ran += 1
+                t.color(colors[ran])
+                t.forward(square.width)
+                t.left(90)
+                t.forward(square.height)
+                t.left(90)
+            t.penup()
+        turtle.done
