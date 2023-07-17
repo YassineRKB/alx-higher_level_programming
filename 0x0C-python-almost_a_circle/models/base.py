@@ -78,10 +78,11 @@ class Base:
         with open(filename, "w") as w:
             towrite = csv.writer(w)
             for obj in list_objs:
-                if filename == "Rectangle.csv":
-                    towrite.writerow([obj.id, obj.width, obj.height, obj.x, obj.y])
+                if cls.__name__ == "Rectangle":
+                    dicc = [obj.id, obj.width, obj.height, obj.x, obj.y]
                 else:
-                    towrite.writerow([obj.id, obj.size, obj.x, obj.y])
+                    dicc = [obj.id, obj.size, obj.x, obj.y]
+                towrite.writerow(dicc)
 
     @classmethod
     def load_from_file_csv(cls):
