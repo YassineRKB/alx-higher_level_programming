@@ -56,3 +56,16 @@ class Base:
             obj = cls(1, 1)
         obj.update(**dictionary)
         return obj
+
+    @classmethod
+    def load_from_file(cls):
+        """method: load from file"""
+        filename = cls.__name__ + ".json"
+        if not path.exists(filename):
+            return []
+        with open(filename, "r") as r:
+            lines = r.read()
+        res = []
+        for line in cls.from_json_string(lines):
+            res.append(cls.create(**line))
+        return res
