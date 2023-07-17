@@ -74,8 +74,8 @@ class Base:
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """method: save_to_file_csv"""
-        filename = cls.__name__ + ".json"
-        if filename == "Rectangle.json":
+        filename = cls.__name__ + ".csv"
+        if filename == "Rectangle.csv":
             dicc = ("id", "width", "height", "x", "y")
         else:
             dicc = ("id", "size", "x", "y")
