@@ -3,6 +3,7 @@
 from os import path
 from json import dumps as dumpjs
 from json import loads as loadjs
+import csv
 
 
 class Base:
@@ -69,3 +70,22 @@ class Base:
         for line in cls.from_json_string(lines):
             res.append(cls.create(**line))
         return res
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """method: save_to_file_csv"""
+        filename = cls.__name__ + ".json"
+        if filename == "Rectangle.json":
+            dicc = ("id", "width", "height", "x", "y")
+        else:
+            dicc = ("id", "size", "x", "y")
+        with open(filename, "w") as w:
+            towrite = csv.DictWriter(w, fieldnames=dicc)
+            towrite.writeheader()
+            if list_objs is not None:
+                towrite.writerow(obj.to_dictionary() for obj in list_objs)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """method: load_from_file_csv"""
+        pass
