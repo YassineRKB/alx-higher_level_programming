@@ -25,3 +25,14 @@ class Base:
         else:
             res = dumpjs(list_dictionaries)
         return res
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """method: save_to_file"""
+        dicList = []
+        if list_objs is not None:
+            for item in list_objs:
+                dicList.append(item.to_dictionary())
+        filename = cls.__name__ + ".json"
+        with open(filename, "w") as w:
+            w.write(f"{cls.to_json_string(dicList)}")
