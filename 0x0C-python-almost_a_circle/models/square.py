@@ -2,7 +2,7 @@
 """Model file for class square"""
 
 
-Rectangle = __import__("base").Rectangle
+from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
