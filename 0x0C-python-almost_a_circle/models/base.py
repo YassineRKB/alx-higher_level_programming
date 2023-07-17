@@ -45,3 +45,14 @@ class Base:
         filename = cls.__name__ + ".json"
         with open(filename, "w") as w:
             w.write(f"{cls.to_json_string(dicList)}")
+
+    @classmethod
+    def create(cls, **dictionary):
+        """method: create"""
+        cname = cls.__name__
+        if cname != "Rectangle":
+            obj = cls(1)
+        else:
+            obj = cls(1, 1)
+        obj.update(**dictionary)
+        return obj
