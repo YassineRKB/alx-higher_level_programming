@@ -22,7 +22,7 @@ class Base:
         if list_dictionaries is None or \
             type(list_dictionaries) != list \
                 or len(list_dictionaries) == 0:
-            res = "[]"
+            return "[]"
         else:
             res = dumpjs(list_dictionaries)
         return res
