@@ -78,7 +78,7 @@ class Base:
         with open(filename, "w") as w:
             towrite = csv.writer(w)
             for obj in list_objs:
-                if cls.__name__ == "Rectangle":
+                if filename == "Rectangle.csv":
                     dicc = [obj.id, obj.width, obj.height, obj.x, obj.y]
                 else:
                     dicc = [obj.id, obj.size, obj.x, obj.y]
@@ -87,4 +87,12 @@ class Base:
     @classmethod
     def load_from_file_csv(cls):
         """method: load_from_file_csv"""
-        pass
+        filename = cls.__name__ + ".csv"
+        if not path.exists(filename):
+            return []
+        with open(filename, "r") as r:
+            lines = r.read()
+        res = []
+        for line in cls.from_json_string(lines):
+            res.append(cls.create(**line))
+        return res
