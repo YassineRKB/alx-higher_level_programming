@@ -65,11 +65,10 @@ class Rectangle(Base):
 
     def valueChecker(self, var, val):
         """method: value checker"""
-        typeInt = isinstance(val, int)
         MsgMustBeInt = " must be integer"
         MsgMustBePos = " must be > 0"
         MsgMustbePosOrZero = " must be >= 0"
-        if val is not None and not typeInt:
+        if val is not None and type(val) is not int:
             raise TypeError(var + MsgMustBeInt)
         if val <= 0 and (var == "height" or var == "width"):
             raise ValueError(var + MsgMustBePos)
