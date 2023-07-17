@@ -77,3 +77,8 @@ class Rectangle(Base):
                 resoutput += "#"
             resoutput += "\n"
         print(resoutput, end="")
+
+    def __str__(self):
+        resstr = f"[{type(self).__name__}] ({self.id}) {self.x}/{self.y} \
+            - {self.width}/{self.height}"
+        return resstr
