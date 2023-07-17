@@ -83,8 +83,12 @@ class Rectangle(Base):
             - {self.width}/{self.height}"
         return resstr
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         lenarg = len(args)
         liargs = ["id", "width", "height", "x", "y"]
-        for i in range(lenarg):
-            setattr(self, liargs[i], args[i])
+        if args is not None and lenarg > 0:
+            for i in range(lenarg):
+                setattr(self, liargs[i], args[i])
+        else:
+            for key in kwargs:
+                setattr(self, key, kwargs[key])
