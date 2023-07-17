@@ -82,3 +82,9 @@ class Rectangle(Base):
         resstr = f"[{type(self).__name__}] ({self.id}) {self.x}/{self.y} \
             - {self.width}/{self.height}"
         return resstr
+
+    def update(self, *args):
+        lenarg = len(args)
+        liargs = ["id", "width", "height", "x", "y"]
+        for i in range(lenarg):
+            setattr(self, liargs[i], args[i])
