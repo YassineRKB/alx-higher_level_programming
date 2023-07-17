@@ -19,7 +19,8 @@ class Base:
 
     def to_json_string(list_dictionaries):
         """method: dictonaries to json"""
-        if list_dictionaries is None or type(list_dictionaries) != list\
-                or len(list_dictionaries) == 0:
+        if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
-        return dumpjs(list_dictionaries)
+        else:
+            res = dumpjs(list_dictionaries)
+        return res
