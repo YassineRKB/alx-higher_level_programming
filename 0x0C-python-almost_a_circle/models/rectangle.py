@@ -68,3 +68,12 @@ class Rectangle(Base):
     def area(self):
         resarea = self.width * self.height
         return resarea
+
+    def display(self):
+        resoutput = "\n" * self.y
+        for i in range(self.height):
+            resoutput += " " * self.x
+            for j in range(self.width):
+                resoutput += "#"
+            resoutput += "\n"
+        print(resoutput, end="")
