@@ -65,7 +65,7 @@ class Rectangle(Base):
 
     def valueChecker(self, var, val):
         """method: value checker"""
-        MsgMustBeInt = " must be integer"
+        MsgMustBeInt = " must be an integer"
         MsgMustBePos = " must be > 0"
         MsgMustbePosOrZero = " must be >= 0"
         if val is not None and type(val) is not int:
