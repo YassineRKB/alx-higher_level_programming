@@ -31,16 +31,32 @@ class Rectangle(Base):
 
     @width.setter
     def width(self, value):
+        self.valueChecker("width", value)
         self.__width = value
 
     @height.setter
     def height(self, value):
+        self.valueChecker("height", value)
         self.__height = value
 
     @x.setter
     def x(self, value):
+        self.valueChecker("x", value)
         self.__x = value
 
     @y.setter
     def y(self, value):
+        self.valueChecker("y", value)
         self.__y = value
+
+    def valueChecker(self, var, val):
+        typeInt = isinstance(val, int)
+        MsgMustBeInt = " must be integer"
+        MsgMustBePos = " must be > 0"
+        MsgMustbePosOrZero = " must be >= 0"
+        if val is not None and not typeInt:
+            raise TypeError(var + MsgMustBeInt)
+        if val <= 0 and (var == "height" or var == "width"):
+            raise ValueError(var + MsgMustBePos)
+        if val < 0 and (var == "x" or var == "y"):
+            raise ValueError(var + MsgMustbePosOrZero)
