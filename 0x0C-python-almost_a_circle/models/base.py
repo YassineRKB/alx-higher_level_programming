@@ -96,8 +96,7 @@ class Base:
             toread = csv.reader(r)
             keys = next(toread, None)
             for line in toread:
-                for key, value in enumerate(line):
-                    dicc[keys[key]] = int(value)
+                dicc = {keys[key]: int(value) for key, value in enumerate(line)}
                 instance = cls.create(**dicc)
                 obj.append(instance)
         return obj
