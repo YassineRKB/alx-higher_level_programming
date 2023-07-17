@@ -111,3 +111,12 @@ class Rectangle(Base):
         else:
             for key in kwargs:
                 setattr(self, key, kwargs[key])
+
+    def to_dictionary(self):
+        """method: to_dictionary"""
+        lisargs = ["id", "width", "height", "x", "y"]
+        dicc = {}
+        for i in lisargs:
+            res = getattr(self, i)
+            dicc[i] = res
+        return dicc
