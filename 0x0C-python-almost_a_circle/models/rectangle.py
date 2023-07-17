@@ -64,3 +64,7 @@ class Rectangle(Base):
             raise ValueError(var + MsgMustBePos)
         if val < 0 and (var == "x" or var == "y"):
             raise ValueError(var + MsgMustbePosOrZero)
+
+    def area(self):
+        resarea = self.width * self.height
+        return resarea
