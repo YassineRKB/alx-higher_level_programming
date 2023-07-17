@@ -114,7 +114,7 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """method: to_dictionary"""
-        lisargs = ["id", "width", "height", "x", "y"]
+        lisargs = ['x', 'width', 'id', 'height', 'y']
         dicc = {}
         for i in lisargs:
             res = getattr(self, i)
