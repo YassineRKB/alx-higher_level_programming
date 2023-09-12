@@ -5,7 +5,7 @@ if (isNaN(argv[2])) {
 } else {
   const num = parseInt(argv[2]);
   let i = 0;
-  const line = '#';
+  const line = 'X';
   for (; i < num;) {
     console.log(line.repeat(num));
     i++;
