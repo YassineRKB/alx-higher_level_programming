@@ -5,13 +5,12 @@ if (isNaN(argv[2])) {
 } else {
   const num = parseInt(argv[2]);
   let i = 0;
-  const line = '';
+  let j = 0;
   for (; i < num;) {
-    line += '#';
     i++;
-  }
-  for (i = 0; i < num;) {
-    console.log(line);
-    i++;
+	for (; j < num;) {
+	  console.log(line);
+	  j++;
+	}
   }
 }
