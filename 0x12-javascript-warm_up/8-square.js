@@ -7,10 +7,10 @@ if (isNaN(argv[2])) {
   let i = 0;
   let j = 0;
   for (; i < num;) {
+    for (; j < num;) {
+      console.log('#');
+      j++;
+    }
     i++;
-	for (; j < num;) {
-	  console.log(line);
-	  j++;
-	}
   }
 }
