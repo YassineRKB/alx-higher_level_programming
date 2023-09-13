@@ -1,5 +1,5 @@
 #!/usr/bin/node
-const nbOccurences = function (list, searchElement) {
+exports.nbOccurences = function (list, searchElement) {
   let c = 0;
   for (const element of list) {
     if (element === searchElement) {
@@ -8,4 +8,3 @@ const nbOccurences = function (list, searchElement) {
   }
   return c;
 };
-module.exports = nbOccurences;
