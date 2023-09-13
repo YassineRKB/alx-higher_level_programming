@@ -1,11 +1,12 @@
 #!/usr/bin/node
 const SquareOrigin = require('./5-square');
+
 class Square extends SquareOrigin {
   constructor (size) {
     super(size, size);
   }
 
-  charPoint (c) {
+  charPrint (c) {
     if (!c) {
       c = 'X';
     }
