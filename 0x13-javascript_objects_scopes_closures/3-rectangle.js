@@ -7,10 +7,10 @@ class Rectangle {
     }
   }
   print () {
-    let column = 0;
-    for (; col < this.height;) {
+    let i = 0;
+    for (; i < this.height;) {
       console.log('X'.repeat(this.width));
-      column += 1;
+      i++;
     }
   }
 }
