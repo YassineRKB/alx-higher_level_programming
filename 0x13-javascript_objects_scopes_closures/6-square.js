@@ -1,5 +1,5 @@
 #!/usr/bin/node
-const SquareOrigin = require('./5-square.js');
+const SquareOrigin = require('./5-square');
 class Square extends SquareOrigin {
   constructor (size) {
     super(size, size);
