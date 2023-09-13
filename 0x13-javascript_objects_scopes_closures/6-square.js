@@ -6,14 +6,13 @@ class Square extends Rectangle {
   }
 
   charPoint (c) {
-    if (c) {
-      let i = 0;
-      for (; i < this.height;) {
-        console.log(c.repeat(this.width));
-        i++;
-      }
-    } else {
+    if (!c) {
       c = 'X';
+    }
+    let i = 0;
+    for (; i < this.height;) {
+      console.log(c.repeat(this.width));
+      i++;
     }
   }
 }
