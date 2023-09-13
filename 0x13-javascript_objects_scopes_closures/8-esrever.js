@@ -1,4 +1,6 @@
 #!/usr/bin/node
 exports.esrever = function (list) {
-  return list.reverse();
+  return list.sort(
+    () => -1
+  );
 };
