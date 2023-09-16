@@ -10,7 +10,7 @@ if __name__ == "__main__":
 
     cursor = db.cursor()
     querry = "SELECT * FROM states ORDER BY id WHERE name LIKE \
-        '{}' ORDER BY id ASC".format(argv[4])
+    '{}' ORDER BY id".format(argv[4])
     cursor.execute(querry)
     data = cursor.fetchall()
     for row in data:
