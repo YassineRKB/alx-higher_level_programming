@@ -15,7 +15,6 @@ if __name__ == "__main__":
     cursor.execute(querry, (argv[4],))
     data = cursor.fetchall()
     for row in data:
-        if row[1] == argv[4]:
-            print(row)
+        print(row)
     cursor.close()
     db.close()
