@@ -11,13 +11,13 @@ if __name__ == "__main__":
     )
 
     cursor = db.cursor()
-    querry = "SELECT cities.name, state.name FROM cities \
-    JOIN states ON states.id = cities.state_id \
-    ORDER BY cities.id"
+    querry = "SELECT cities.name FROM cities \
+    JOIN states ON cities.state_id = states.id \
+    WHERE states.name = %s \
+    ORDER BY cities.id ASC"
     cursor.execute(querry, (argv[4],))
     data = cursor.fetchall()
     for row in data:
-        if row[1] == argv[4]:
-            print(row)
+        print(row)
     cursor.close()
     db.close()
