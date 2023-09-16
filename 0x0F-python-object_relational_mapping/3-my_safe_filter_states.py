@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-"""script that takes in arguments and displays all
-values in the states table of hbtn_0e_0_usa where
-name matches the argument"""
+"""script that takes in an argument and displays
+all values in the states table of hbtn_0e_0_usa where
+name matches the argument."""
 import MySQLdb
 from sys import argv
 
@@ -11,9 +11,9 @@ if __name__ == "__main__":
     )
 
     cursor = db.cursor()
-    querry = "SELECT * FROM states WHERE name LIKE %s \
-ORDER BY id ASC"
-    cursor.execute(querry, (argv[4],))
+    querry = "SELECT * FROM states WHERE name LIKE '{}' \
+ORDER BY id ASC".format(argv[4])
+    cursor.execute(querry)
     data = cursor.fetchall()
     for row in data:
         if row[1] == argv[4]:
