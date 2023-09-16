@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""script to list all states from the database hbtn_0e_0_usa"""
+"""script that takes in an argument and displays
+all values in the states table of hbtn_0e_0_usa where
+name matches the argument."""
 import MySQLdb
 from sys import argv
 
@@ -14,6 +16,7 @@ ORDER BY id ASC".format(argv[4])
     cursor.execute(querry)
     data = cursor.fetchall()
     for row in data:
-        print(row)
+        if row[1] == argv[4]:
+            print(row)
     cursor.close()
     db.close()
