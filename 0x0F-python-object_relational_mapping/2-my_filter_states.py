@@ -11,8 +11,7 @@ if __name__ == "__main__":
     )
 
     cursor = db.cursor()
-    querry = "SELECT * FROM states WHERE name=%s \
-ORDER BY id ASC"
+    querry = "SELECT * FROM states WHERE name=%s ORDER BY id"
     cursor.execute(querry, (argv[4],))
     data = cursor.fetchall()
     for row in data:
