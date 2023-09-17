@@ -10,6 +10,7 @@ from sys import argv
 if __name__ == "__main__":
     conString = f"mysql://{argv[1]}:{argv[2]}@localhost:3306/{argv[3]}"
     engine = create_engine(conString)
+    Base.metadata.create_all(engine)
     SessObj = sessionmaker(bind=engine)
     session = SessObj()
     stateObj = State(name="California")
