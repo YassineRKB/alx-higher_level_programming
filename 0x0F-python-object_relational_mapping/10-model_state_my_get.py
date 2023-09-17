@@ -11,7 +11,7 @@ if __name__ == "__main__":
     engine = create_engine(conString)
     SessObj = sessionmaker(bind=engine)
     session = SessObj()
-    data = session.query(State).filter(State.name.like(argv[4])).all()
+    data = session.query(State).filter(State.name.like(argv[4])).first()
     if not data:
         print("Not found")
     else:
