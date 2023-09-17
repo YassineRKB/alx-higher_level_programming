@@ -11,7 +11,9 @@ if __name__ == "__main__":
     engine = create_engine(conString)
     SessObj = sessionmaker(bind=engine)
     session = SessObj()
-    data = session.query(State).filter(State.name.like("%a%")).all()
-    for row in data:
-        print("{}: {}".format(row.id, row.name))
+    data = session.query(State).filter(State.name.like(argv[4])).all()
+    if not data:
+        print("Not found")
+    else:
+        print("{}".format(data.id))
     session.close()
