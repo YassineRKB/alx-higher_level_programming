@@ -10,7 +10,7 @@ if __name__ == "__main__":
     engine = create_engine(conString)
     SessObj = sessionmaker(bind=engine)
     session = SessObj()
-    data = session.query(State).filter(State.name.like("%a%")).all()
+    data = session.query(State).filter(State.name.like('%a%')).all()
     for row in data:
         session.delete(row)
     session.commit()
