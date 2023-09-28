@@ -6,20 +6,19 @@ Module to find a peak in a list of unsorted ints
 
 def find_peak(list_of_integers):
     """
-    Find a peak in a list of unsorted integers.
+    Find a peak in a list of unsorted integers using binary search.
     """
-    length = len(list_of_integers)
-
-    if length == 0:
+    if list_of_integers == []:
         return None
-
-    if length == 1 or list_of_integers[0] >= list_of_integers[1]:
+    if len(list_of_integers) == 1:
         return list_of_integers[0]
-
-    if list_of_integers[length - 1] >= list_of_integers[length - 2]:
-        return list_of_integers[length - 1]
-
-    for i in range(1, length - 1):
-        if list_of_integers[i] >= list_of_integers[i - 1] \
-                and list_of_integers[i] >= list_of_integers[i + 1]:
-            return list_of_integers[i]
+    if len(list_of_integers) == 2:
+        return max(list_of_integers)
+    left, right = 0, len(list_of_integers) - 1
+    while left < right:
+        mid = (left + right) // 2
+        if list_of_integers[mid] < list_of_integers[mid + 1]:
+            left = mid + 1
+        else:
+            right = mid
+    return list_of_integers[left]
