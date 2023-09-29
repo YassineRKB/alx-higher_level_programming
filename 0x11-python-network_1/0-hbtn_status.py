@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """Python script that fetches https://alx-intranet.hbtn.io/status"""
-import urllib.request as quest
+import urllib.request
 
 if __name__ == "__main__":
-    with quest.urlopen('https://alx-intranet.hbtn.io/status') as req:
+    with urllib.request.urlopen('https://alx-intranet.hbtn.io/status') as req:
         data = req.read()
         print('Body response:')
         print("\t- type: {}".format(type(data)))
