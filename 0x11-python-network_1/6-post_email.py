@@ -8,5 +8,5 @@ import requests
 if __name__ == "__main__":
     url = argv[1]
     json = {'email': sys.argv[2]}
-    data = requests.post(url, data=json).text
-    print(data)
+    data = requests.post(url, data=json)
+    print(data.text)
