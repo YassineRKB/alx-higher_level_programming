@@ -5,12 +5,11 @@ import requests
 from sys import argv
 
 if __name__ == "__main__":
-    URL = f"https://api.github.com/repos/{argv[2]}/{argv[2]}/commits"
-    req = requests.get(URL)
-    totalcommits = req.json()
-    try:
-        for commit in totalcommits[:10]:
-            print(commit.get('sha'), end=': ')
-            print(commit.get('commit').get('author').get('name'))
-    except IndexError:
-        pass
+    repo = sys.argv[1]
+    owner = sys.argv[2]
+    url = f"https://api.github.com/repos/{owner}/{repo}/commits"
+    commits = requests.get(url)
+    for commit in commits.json()[:10]:
+        sha = commit.get('sha')
+        na = commit.get('commit').get('author').get('name')
+        print(f"{sha}: {na}")
