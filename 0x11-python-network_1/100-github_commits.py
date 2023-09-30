@@ -5,12 +5,9 @@ import sys
 import requests
 
 if __name__ == "__main__":
-    owner = sys.argv[1]
-    repo = sys.argv[2]
-    URL = f"https://api.github.com/repos/{owner}/{repo}/commits"
+    URL = f"https://api.github.com/repos/{sys.argv[2]}/{sys.argv[2]}/commits"
     req = requests.get(URL)
-    total_commits = req.json()
-    for commit in total_commits[0:10]:
-        sha = commit.get('sha')
-        author = commit.get('commit').get('author').get('name')
-        print(f"{sha}: {author}")
+    totalcommits = req.json()
+    for commit in totalcommits[0:10]:
+        print(commit.get('sha'), end=': ')
+        print(commit.get('commit').get('author').get('name'))
