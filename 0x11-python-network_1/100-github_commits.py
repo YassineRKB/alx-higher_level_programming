@@ -7,7 +7,7 @@ import requests
 if __name__ == "__main__":
     owner = sys.argv[1]
     repo = sys.argv[2]
-    URL = f"https://api.github.com/repos/{Owner}/{repo}/commits"
+    URL = f"https://api.github.com/repos/{owner}/{repo}/commits"
     req = requests.get(URL)
     total_commits = req.json()
     for commit in total_commits[0:10]:
