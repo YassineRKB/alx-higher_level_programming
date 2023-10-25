@@ -8,7 +8,7 @@ request(endpoint,
   (err, { statusCode, body }) => {
     if (err) return console.log(err);
     if (statusCode === 200) {
-      const title = JSON.parse(body);
+      const { title } = JSON.parse(body);
       return console.log(title);
     }
     console.log(`Error code: ${statusCode}`);
